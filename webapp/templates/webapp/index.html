@@ -1,11 +1,21 @@
 {% extends 'webapp/base.html' %}
 
 {% block title %}
-Main
+{{title}}
 {% endblock %}
 
 {% block exam %}
-    <h1> Main </h1>
-    <p>text</p>
+    <h1>Main</h1>
+    {%if articles%}
+        {% for el in articles %}
+            <div class=" alert alert-warning mt-2 ">
+                <p>{{el.email}}</p>
+                <p>{{el.text}}</p>
+                <p>{{el.author}}</p>
+            </div>
+        {%endfor%}
+    {%else%}
+        <p>Нет записей</p>
+    {%endif%}
 {% endblock %}
 

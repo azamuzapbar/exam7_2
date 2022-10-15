@@ -1,0 +1,17 @@
+{% extends 'webapp/base.html' %}
+
+{% block title %}
+Create article
+{% endblock %}
+
+{% block exam %}
+    <h1>Create</h1>
+    <form method="post">
+        {%csrf_token%}
+        {{form.email}}<br>
+        {{form.text}}<br>
+        {{form.author}}<br>
+        <button type="submit" class="btn btn-success"> Create </button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
