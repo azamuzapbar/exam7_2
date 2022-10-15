@@ -12,6 +12,8 @@
                 <p>{{el.email}}</p>
                 <p>{{el.text}}</p>
                 <p>{{el.author}}</p>
+                <a href="{%url 'news-delete' el.id%}" class="btn btn-danger">Delete</a>
+                <a href="{%url 'news-update' el.id%}" class="btn btn-info">Edit</a>
             </div>
         {%endfor%}
     {%else%}

@@ -15,6 +15,8 @@ class Article(models.Model):
     created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
     changed_at = models.DateTimeField(verbose_name='Дата изменения', auto_now=True)
 
-
     def __str__(self):
         return f'{self.email}-{self.author}-{self.text}'
+
+    def get_absolute_url(self):
+        return f'/news/{self.id}'
